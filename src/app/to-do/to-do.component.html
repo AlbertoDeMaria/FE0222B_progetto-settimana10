@@ -1,0 +1,16 @@
+<div class="container w-25 text-center pt-5">
+
+  <ul  *ngFor="let i of listaCompiti" class="list-unstyled">
+    <div *ngIf="!i.isDone" class="form-check">
+      <input class="form-check-input" (click)="elimina(i.id)" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">{{i.title}}</label>
+    </div>
+  </ul>
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Write your task" (input)="copiaTitolo($event)">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" (click)="aggiornaLista()" type="button">Button</button>
+    </div>
+  </div>
+</div>
