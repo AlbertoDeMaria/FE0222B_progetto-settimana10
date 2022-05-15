@@ -24,13 +24,9 @@ export class ToDOComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  copiaTitolo(event:Event){
-    const target = <HTMLInputElement>event.target;
-    this.titolo= target.value;
-  }
-
   aggiornaLista(){
     aggiungiTask(this.titolo).then(compiti =>{
+      this.titolo = '';
       this.listaCompiti=<Compito[]>compiti;
       this.contatore++;
     })
