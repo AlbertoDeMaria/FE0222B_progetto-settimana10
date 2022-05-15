@@ -11,6 +11,7 @@ export class DoneComponent implements OnInit {
 
   listaCompiti!:Compito[];
   caricato:boolean=false;
+  contatore:number = 0;
 
   constructor() {
     getTaskList().then(compiti => {
