@@ -11,10 +11,13 @@ export class ToDOComponent implements OnInit {
 
   listaCompiti!:Compito[]
   titolo!:string;
+  caricato:boolean = false;
+  contatore:number = 0;
 
   constructor() {
     getTaskList().then(compiti => {
       this.listaCompiti=<Compito[]>compiti;
+      this.caricato=true;
     })
   }
 
@@ -29,12 +32,14 @@ export class ToDOComponent implements OnInit {
   aggiornaLista(){
     aggiungiTask(this.titolo).then(compiti =>{
       this.listaCompiti=<Compito[]>compiti;
+      this.contatore++;
     })
   }
 
   elimina(index:number){
     rimuoviCompito(index).then(compiti =>{
       this.listaCompiti=<Compito[]>compiti;
+      this.contatore--;
     })
   }
 

@@ -8,6 +8,7 @@ export async function getTaskList():Promise<Compito[]>{
     setTimeout(() => {
       resolve(<Compito[]>listaDiToDO);
     }, 2000);
+    console.log('carico');
   });
 }
 

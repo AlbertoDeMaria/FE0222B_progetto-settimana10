@@ -1,5 +1,5 @@
 <div class="container w-25 text-center pt-5">
-
+  <h5 *ngIf="!caricato">Recupero le tasks...</h5>
   <ul  *ngFor="let i of listaCompiti" class="list-unstyled">
     <div *ngIf="i.isDone" class="form-check">
       <label class="form-check-label" for="flexCheckDefault">{{i.title}}</label>

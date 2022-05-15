@@ -10,10 +10,12 @@ import { getTaskList } from '../service/service.service';
 export class DoneComponent implements OnInit {
 
   listaCompiti!:Compito[];
+  caricato:boolean=false;
 
   constructor() {
     getTaskList().then(compiti => {
       this.listaCompiti=<Compito[]>compiti;
+      this.caricato=true;
     })
   }
 
