@@ -15,8 +15,7 @@ export class ToDOComponent implements OnInit {
   constructor() {
     getTaskList().then(compiti => {
       this.listaCompiti=<Compito[]>compiti;
-    }
-    )
+    })
   }
 
   ngOnInit(): void {
