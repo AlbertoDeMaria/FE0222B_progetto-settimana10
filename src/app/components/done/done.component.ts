@@ -13,8 +13,10 @@ export class DoneComponent implements OnInit {
   loaded:boolean=false;
 
   constructor() {
+    //recupero le task
     getTaskList().then(compiti => {
       this.taskList=<Task[]>compiti;
+      //aggiorno lo stato di loaded
       this.loaded=true;
     })
   }
