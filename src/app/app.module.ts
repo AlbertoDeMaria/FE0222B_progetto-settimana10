@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ToDOComponent } from './to-do/to-do.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { DoneComponent } from './done/done.component';
+import { ToDOComponent } from './components/to-do/to-do.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { DoneComponent } from './components/done/done.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 

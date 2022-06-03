@@ -1,37 +1,43 @@
-import { Compito } from '../interface/compito';
+import { Task } from '../interface/task';
+import { Injectable } from '@angular/core';
 
-var listaDiToDO:Compito[] = [];
+@Injectable({
+  providedIn: 'root'
+})
+
+export class service {}
+var listOfTodo:Task[] = [];
 var id:number = 0;
 
-export async function getTaskList():Promise<Compito[]>{
+export async function getTaskList():Promise<Task[]>{
   return await new Promise(resolve => {
     setTimeout(() => {
-      resolve(<Compito[]>listaDiToDO);
+      resolve(<Task[]>listOfTodo);
     }, 2000);
     console.log('carico');
   });
 }
 
-export async function aggiungiTask(titolo:string):Promise<Compito[]>{
+export async function addTask(titolo:string):Promise<Task[]>{
   return await new Promise(resolve => {
     setTimeout(() => {
       if (!titolo){
         alert('scrivi qualcosa')
       } else {
-        let compito:Compito = {'id':id++,'title':titolo, 'isDone': false};
-        listaDiToDO.push(compito);
-        resolve (<Compito[]>listaDiToDO);
+        let compito:Task = {'id':id++,'title':titolo, 'isDone': false};
+        listOfTodo.push(compito);
+        resolve (<Task[]>listOfTodo);
       }
     }, 2000);
   });
 }
 
-export async function rimuoviCompito(index:number):Promise<Compito[]>{
+export async function removeTask(index:number):Promise<Task[]>{
   return await new Promise(resolve => {
     setTimeout(() => {
-      listaDiToDO[index].isDone = true;
-      console.log(listaDiToDO);
-      resolve (<Compito[]>listaDiToDO);
+      listOfTodo[index].isDone = true;
+      console.log(listOfTodo);
+      resolve (<Task[]>listOfTodo);
     }, 2000);
   });
 }

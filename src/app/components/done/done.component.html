@@ -1,0 +1,12 @@
+<div class="container w-25 text-center pt-5">
+  <h5 *ngIf="!loaded">Recupero le tasks...</h5>
+  <ul *ngFor="let i of taskList" class="list-unstyled">
+    <div *ngIf="i.isDone" class="form-check">
+      <label class="form-check-label" for="flexCheckDefault"><del>{{i.title}}</del></label>
+    </div>
+  </ul>
+</div>
+
+<div *ngIf="loaded" class="text-center">
+  <h5 *ngIf="taskList.length <= 0">Opps, non ci sono tasks...</h5>
+</div>

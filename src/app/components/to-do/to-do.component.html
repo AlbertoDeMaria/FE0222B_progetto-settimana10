@@ -1,0 +1,19 @@
+<div class="container w-25 text-center pt-5">
+  <h5 *ngIf="!loaded">Recupero tasks...</h5>
+  <ul *ngFor="let i of taskList" class="list-unstyled">
+    <div *ngIf="!i.isDone" class="form-check">
+      <input class="form-check-input" (click)="delete(i.id)" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">{{i.title}}</label>
+    </div>
+  </ul>
+
+  <div *ngIf="loaded">
+    <h5 *ngIf="counter == 0">Opps, non ci sono tasks...</h5>
+    <div class="input-group mb-3 pt-5">
+      <input type="text" class="form-control" placeholder="Write your task" [(ngModel)]="title">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="updateList()" type="button">+</button>
+      </div>
+    </div>
+  </div>
+</div>
