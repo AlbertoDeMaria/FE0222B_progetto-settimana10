@@ -1,11 +1,5 @@
 import { Task } from '../interface/task';
-import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
-
-export class service {}
 var listOfTodo:Task[] = [];
 var id:number = 0;
 
